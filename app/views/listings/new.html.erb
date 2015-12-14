@@ -1,0 +1,53 @@
+<p id="ejuice-add" href="/listings/new">Add an Ejuice</p>
+<p id="mod-add" href="/listings/new">Add an Mod</p>
+
+<h1 id="ejuice"> E-Juice </h1>
+<h1 id="ejuice"> Mods </h1>
+
+
+<div class="new-div" x`style="background-color:white; width:100%;text-align:center;height:400px;padding-top:50px;">
+<%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
+	<%= f.label(:name) %>
+	<%=f.text_field :name %><br><br>
+   	<%=f.label :size %>
+   	<%= f.text_field :size %><br><br>
+	<%= f.label :price %>
+	<%= f.number_field :price %><br><br>
+	<%= f.label :description %>
+	<%= f.text_field :description %><br><br>
+	<%= f.label :features %>
+	<%= f.text_field :features %><br><br>
+	<%= f.label :product_includes %>
+	<%= f.text_field :product_includes %><br><br>
+  	 <%=f.label :product_recommendations %>
+	 <%=f.text_field :product_recommendations %><br><br>
+	 <%=f.label :nicotine_level %>
+	 <%=f.text_field :nicotine_level %><br><br>
+	 <%=f.label :dimensions %>
+	 <%=f.text_field :dimensions %><br><br>
+	 <%=f.label :warning_section %>
+	 <%=f.text_field :warning_section %><br><br>
+	 <%=f.label :youtube_video_link %>
+	 <%=f.text_field :youtube_video_link %><br><br>
+	 <%=f.label :gauges %>
+	 <%=f.text_field :gauges %><br><br>
+	 <%=f.label :ohm_level %>
+	 <%=f.text_field :ohm_level %><br><br>
+	 <%=f.label :coil_specs %>
+	 <%=f.text_field :coil_specs %><br><br>
+	 <%=f.label :note %>
+	 <%=f.text_field :note %><br><br>
+	 <%=f.label :safety_notes %>
+	 <%=f.text_field :safety_notes %><br><br>
+	 <%= f.select :section, options_for_select([["Select Type", ""], "E-Juice", "Devices", "Tanks", "Rebulidables/RDA's", "Drip Kits", "Wire", "Wicks", "Replacement Parts", "Replacement Coils", "Batteries", "Chargers", "Essential Tools for Rebulidables", "Cases and Mod Pouches"]) %>	<br><br>
+
+
+
+ <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+	<%=f.submit %>
+
+	<% end %>
+
+</div>
+
