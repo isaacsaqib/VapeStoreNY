@@ -1,1 +1,25 @@
-show.html.erb
+
+<% if @listing.section == "E-Juice" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Size:<%=@listing.size %><br><br>
+Nicotine Level: <%=@listing.nicotine_level %><br><br>
+<% end %>
+
+<% if @listing.section == "Devices" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Dimensions: <%= @listing.dimensions %><br><br>
+Features: <%= @listing.features %><br><br>
+Product Includes: <%= @listing.product_includes %><br><br>
+Product Recommendations: <%= @listing.product_recommendations %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Youtube Video: <%= @listing.youtube_video_link %><br><br>
+<% end %>
+
+
+
+
+

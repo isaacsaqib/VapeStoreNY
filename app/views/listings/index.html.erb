@@ -1,25 +1,52 @@
+<ul id="listings-nav">
+	<li>All</li>
+	<li>Ejuice</li>
+	<li>Devices</li>
+	<li>Bla</li>
 
-<table class="products" id="new">
+
+</ul>
+
+
+<table class="products" id="ejuice-table">
 	<tr>
 		<td class="col">
 			<ul>
-			<% @listings.each do |listing| %>
-				Name:<%= listing.name %><br><br>
+			<% @listings_ejuice.each do |listing| %>
+				<%= link_to listing.name, listing_path(listing) %><br><br>
 				Price:<%= listing.price %><br><br>
 				Description:<%= listing.description %><br><br>
 				Size:<%= listing.size %><br><br>
-				Features:<%= listing.features %><br><br>
-				Product Includes:<%= listing.product_includes %><br><br>
-				Product Recommendations:<%= listing.product_recommendations %><br><br>
 				Nicotine:<%= listing.nicotine_level %><br><br>
-				Dimensions:<%= listing.dimensions %><br><br>
-				Warning Section:<%= listing.warning_section %><br><br>
-				Youtube Video Link:<%= listing.youtube_video_link %><br><br>
-				Gauges:<%= listing.gauges %><br><br>
-				Ohm Level:<%= listing.ohm_level %><br><br>
-				Coil Specs:<%= listing.coil_specs %><br><br>
-				Note:<%= listing.note %><br><br>
-				Safety Notes:<%= listing.safety_notes %><br><br>
+				<%= link_to "Delete", listing, :method => :delete,
+                                      data: { confirm: "You sure?" } %><br><br>
+				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+				
+				<% end %>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
+<table class="products" id="device-table">
+	<tr>
+		<td class="col">
+			<ul>
+			<% @listings_device.each do |listing| %>
+				<%= link_to listing.name, listing_path(listing) %><br><br>
+				Price:<%= listing.price %><br><br>
+				Description:<%= listing.description %><br><br>
+				Dimensions: <%= listing.dimensions %><br><br>
+				Features: <%= listing.features %><br><br>
+				Product Includes: <%= listing.product_includes %><br><br>
+				Product Recommendations: <%= listing.product_recommendations %><br><br>
+				Warning Section: <%= listing.warning_section %><br><br>
+				Youtube Video: <%= listing.youtube_video_link %><br><br>
+				<%= link_to "Delete", listing, :method => :delete,
+                                      data: { confirm: "You sure?" } %><br><br>
+				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+				
 				<% end %>
 			</ul>
 		</td>

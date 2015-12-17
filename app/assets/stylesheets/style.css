@@ -1,0 +1,37 @@
+body {
+
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+input {
+	text-align: center;
+}
+
+
+#listings-nav li:nth-child(2){
+	
+}
+.new-div {
+	background-color:white;
+	width:100%;
+	text-align:center;
+	height:400px;
+	padding-top:50px;
+
+
+}
+
+#ejuice-add:hover {
+	cursor: pointer;
+}
+
+#device-add:hover {
+	cursor: pointer;
+}
