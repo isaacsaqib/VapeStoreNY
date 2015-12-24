@@ -3,6 +3,9 @@ class ListingsController < ApplicationController
 		@listings = Listing.all
 		@listings_ejuice = Listing.where(:section => "E-Juice")
 		@listings_device = Listing.where(:section => "Devices")
+		@listings_tank = Listing.where(:section => "Tanks")
+		@listings_rda = Listing.where(:section => "Rebulidables/RDA's")
+		@listings_drip_kit = Listing.where(:section => "Drip Kits")
 	end
 
 	def new

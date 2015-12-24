@@ -1,5 +1,18 @@
-<p id="ejuice-add">Add an Ejuice</p>
-<p id="device-add">Add a Device</p>
+<p class="h1-new-form" id="ejuice-add">Add an Ejuice</p>
+<p class="h1-new-form" id="device-add">Add a Device</p>
+<p class="h1-new-form" id="tank-add">Add a Tank</p>
+<p class="h1-new-form" id="rda-add">Add an RDA</p>
+<p class="h1-new-form" id="drip_kit-add">Add a Drip Kit</p>
+<p class="h1-new-form" id="wire-add">Add a Wire</p>
+<p class="h1-new-form" id="wick-add">Add a Wick</p>
+<p class="h1-new-form" id="replacement_part-add">Add a Replacement Part</p>
+<p class="h1-new-form" id="replacement_coil-add">Add a Replacement Coil</p>
+<p class="h1-new-form" id="essential-rda-add">Add Essential Tool for Rebuildables</p>
+<p class="h1-new-form" id="batteries-add">Add Batteries</p>
+<p class="h1-new-form" id="charger-add">Add Chargers</p>
+<p class="h1-new-form" id="cases_and_mod_pouch-add">Add Cases and Mod Pouches</p>
+
+
 
 
 <div class="new-div">
@@ -57,51 +70,249 @@
 		<%=f.submit %>
 
 		<% end %>
+
+		<!-- Tank Form -->
+	<h1 id="tank"> Tanks </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "tank-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%= f.label :product_includes %>
+		<%= f.text_field :product_includes %><br><br>
+		 <%=f.label :warning_section %>
+		 <%=f.text_field :warning_section %><br><br>
+		 <%=f.label :youtube_video_link %>
+		 <%=f.text_field :youtube_video_link %><br><br>
+
+		 <%= f.select :section, options_for_select([["Tanks"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+	<!-- RDA Form -->
+	<h1 id="rda"> RDA's </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "rda-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%= f.label :product_includes %>
+		<%= f.text_field :product_includes %><br><br>
+		 <%=f.label :warning_section %>
+		 <%=f.text_field :warning_section %><br><br>
+		 <%=f.label :youtube_video_link %>
+		 <%=f.text_field :youtube_video_link %><br><br>
+
+		 <%= f.select :section, options_for_select([["Rebulidables/RDA's"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+		<!-- Drip Kit Form -->
+	<h1 id="drip_kit"> Drip Kits </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "drip_kit-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%= f.label :product_includes %>
+		<%= f.text_field :product_includes %><br><br>
+		 <%=f.label :warning_section %>
+		 <%=f.text_field :warning_section %><br><br>
+
+		 <%= f.select :section, options_for_select([["Drip Kits"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+		<!-- Wire Form -->
+	<h1 id="wire"> Wire </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "wire-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%=f.label :gauges %>
+	 	<%=f.text_field :gauges %><br><br>
+		 <%= f.select :section, options_for_select([["Wire"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+		<!-- Wick Form -->
+	<h1 id="wick"> Wick </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "wick-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		 <%= f.select :section, options_for_select([["Wicks"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+		<!-- Repalcement Part Form -->
+	<h1 id="replacement_part"> Repalcement Part </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "replacement_part-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		 <%= f.select :section, options_for_select([["Replacement Parts"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+				<!-- Repalcement Coil Form -->
+	<h1 id="replacement_coil"> Repalcement Coil </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "replacement_coil-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%=f.label :ohm_level %>
+		 <%=f.text_field :ohm_level %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%=f.label :coil_specs %>
+		<%=f.text_field :coil_specs %><br><br>
+		<%=f.label :warning_section %>
+		<%=f.text_field :warning_section %><br><br>
+		<%=f.label :note %>
+		<%=f.text_field :note %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		 <%= f.select :section, options_for_select([["Replacement Coils"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+				<!-- Batteries Form -->
+	<h1 id="batteries"> Batteries </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "batteries-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%=f.label :warning_section %>
+		<%=f.text_field :warning_section %><br><br>
+		<%=f.label :note %>
+		<%=f.text_field :note %><br><br>
+		<%=f.label :safety_notes %>
+		<%=f.text_field :safety_notes %><br><br>
+		<%=f.label "Specs" %>
+		<%=f.text_field :coil_specs %><br><br>
+		<%= f.select :section, options_for_select([["Batteries"]]) %>	<br><br>
+		<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+				<!-- Charger Form -->
+	<h1 id="charger"> Chargers </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "charger-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%=f.label :warning_section %>
+		<%=f.text_field :warning_section %><br><br>
+		<%=f.label :note %>
+		<%=f.text_field :note %><br><br>
+		<%=f.label :safety_notes %>
+		 <%=f.text_field :safety_notes %><br><br>
+		 <%= f.select :section, options_for_select([["Chargers"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+		<h1 id="essential-rda"> Essential Tool for RDA </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "essential-rda-form" } do |f| %>
+		<%= f.label(:name) %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%=f.label :warning_section %>
+		<%=f.text_field :warning_section %><br><br>
+		<%=f.label :note %>
+		<%=f.text_field :note %><br><br>
+		 <%= f.select :section, options_for_select([["Essential Tools for Rebulidables"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
+
+			<h1 id="cases_and_mod_pouch"> Cases and Mod Pouches </h1>
+	<%= form_for @listing, :url => listings_path, :html => { :multipart => true, :id => "cases_and_mod_pouch-form" } do |f| %>
+		<%= f.label "Style" %>
+		<%=f.text_field :name %><br><br>
+		<%= f.label :price %>
+		<%= f.number_field :price %><br><br>
+		<%= f.label :description %>
+		<%= f.text_field :description %><br><br>
+		<%= f.label :features %>
+		<%= f.text_field :features %><br><br>
+		<%=f.label :warning_section %>
+		<%=f.text_field :warning_section %><br><br>
+		
+		 <%= f.select :section, options_for_select([["Cases and Mod Pouches"]]) %>	<br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+
+		<%=f.submit %>
+
+		<% end %>
 </div>
 
 
 
-<br><br>
-
-	<%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |f| %>
-	<%= f.label(:name) %>
-	<%=f.text_field :name %><br><br>
-   	<%=f.label :size %>
-   	<%= f.text_field :size %><br><br>
-	<%= f.label :price %>
-	<%= f.number_field :price %><br><br>
-	<%= f.label :description %>
-	<%= f.text_field :description %><br><br>
-	<%= f.label :features %>
-	<%= f.text_field :features %><br><br>
-	<%= f.label :product_includes %>
-	<%= f.text_field :product_includes %><br><br>
-  	 <%=f.label :product_recommendations %>
-	 <%=f.text_field :product_recommendations %><br><br>
-	 <%=f.label :nicotine_level %>
-	 <%=f.text_field :nicotine_level %><br><br>
-	 <%=f.label :dimensions %>
-	 <%=f.text_field :dimensions %><br><br>
-	 <%=f.label :warning_section %>
-	 <%=f.text_field :warning_section %><br><br>
-	 <%=f.label :youtube_video_link %>
-	 <%=f.text_field :youtube_video_link %><br><br>
-	 <%=f.label :gauges %>
-	 <%=f.text_field :gauges %><br><br>
-	 <%=f.label :ohm_level %>
-	 <%=f.text_field :ohm_level %><br><br>
-	 <%=f.label :coil_specs %>
-	 <%=f.text_field :coil_specs %><br><br>
-	 <%=f.label :note %>
-	 <%=f.text_field :note %><br><br>
-	 <%=f.label :safety_notes %>
-	 <%=f.text_field :safety_notes %><br><br>
-	 <%= f.select :section, options_for_select([["Select Type", ""], "E-Juice", "Devices", "Tanks", "Rebulidables/RDA's", "Drip Kits", "Wire", "Wicks", "Replacement Parts", "Replacement Coils", "Batteries", "Chargers", "Essential Tools for Rebulidables", "Cases and Mod Pouches"]) %>	<br><br>
- <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
-
-	<%=f.submit %>
-
-	<% end %>
-
+<!-- Sections:  "E-Juice", "Devices", "Tanks", "Rebulidables/RDA's", "Drip Kits", "Wire", "Wicks", "Replacement Parts", "Replacement Coils", "Batteries", "Chargers", "Essential Tools for Rebulidables", "Cases and Mod Pouches" -->
 
 

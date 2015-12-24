@@ -28,10 +28,7 @@ input {
 
 }
 
-#ejuice-add:hover {
+.h1-new-form:hover {
 	cursor: pointer;
-}
-
-#device-add:hover {
-	cursor: pointer;
+	font-family: "Verdana";
 }
