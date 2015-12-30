@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	$("#all-table").hide();
 
+
+
 	// Hiding Tables and Forms
 
 	function HideTableAndForm(name) {
@@ -13,6 +15,7 @@ $(document).ready(function(){
 
 	function ShowListingTable(li_id, name) {
 		$("#listings-nav li:nth-child(" + li_id + ")").on("click", function(){
+			$(".products").hide();
 			$("#" + name + "-table").fadeIn();
 
 		});
@@ -26,6 +29,10 @@ $(document).ready(function(){
 			$("#" + name + "-form").fadeIn();
 		});
 	};
+
+
+
+
 
 	// Calling Functions Above For Each Listing
 
