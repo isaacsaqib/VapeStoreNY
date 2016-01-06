@@ -1,0 +1,47 @@
+<title>Cart | MXMNY</title>
+
+
+<body style="background-image:none;">
+
+
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+
+<table id="cart-table">
+
+<% if session[:carts] && session[:carts].count > 0 %>
+
+	<tr><th>ITEM</th><th>PRICE</th><th>REMOVE</th></tr>
+
+<% session[:carts].delete('') 
+@total = 0
+@product_names = ''
+@count_products =  ''
+@shipping_charges = ''
+	session[:carts].each do |cart|
+		cart.each do |product|
+			if product[2]!=nil
+			@total = @total+product[1].to_i
+			@product_names = @product_names+", "+product[0]
+			if product[3]!=nil
+				@product_names = @product_names+", "+product[3].to_s
+
+				end
+session[:product_names] = @product_names;
+			%>
+	<tr><td><%= product[0] %></td><td><%= product[1] %></td><td><%= product[3] %></td><td><a href="carts?remove=<%=product[3]%>">X</a></td></tr> 
+		<%end 
+	end
+end %>
+
+	<tr><td><a href="/shipping">Continue</a></td><td>
+</td><td>
+</td></tr>
+
+<%else %>
+	<tr><td>No product in the cart</td></tr>
+<%
+end
+ %>
+</table>
+</body>

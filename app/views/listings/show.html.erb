@@ -5,6 +5,23 @@ Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Size:<%=@listing.size %><br><br>
 Nicotine Level: <%=@listing.nicotine_level %><br><br>
+<form method="get">
+				<input type="hidden" name="product_id" value="<%=@listing.id%>">
+				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
+		
+				 <br/>
+				 
+				<br>
+				<input id="add-to-cart-btn" type="submit" value="Add to bag">
+
+				<br>
+				<br>
+								<div class="line-separator"></div>
+
+
+	</form>	
+
+	<a href="/carts"> Cart</a>
 <% end %>
 
 <% if @listing.section == "Devices" %>
@@ -18,6 +35,116 @@ Product Recommendations: <%= @listing.product_recommendations %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Youtube Video: <%= @listing.youtube_video_link %><br><br>
 <% end %>
+
+
+<% if @listing.section == "Tanks" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+Product Includes: <%= @listing.product_includes %><br><br>
+Product Recommendations: <%= @listing.product_recommendations %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Youtube Video: <%= @listing.youtube_video_link %><br><br>
+<% end %>
+
+<% if @listing.section == "Rebulidables/RDA's" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+Product Includes: <%= @listing.product_includes %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Youtube Video: <%= @listing.youtube_video_link %><br><br>
+<% end %>
+
+
+<% if @listing.section == "Drip Kits" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+Product Includes: <%= @listing.product_includes %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+<% end %>
+
+<% if @listing.section == "Wire" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Gauge: <%=@listing.gauges %><br><br>
+<% end %>
+
+
+<% if @listing.section == "Wicks" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+<% end %>
+
+
+<% if @listing.section == "Replacement Parts" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+<% end %>
+
+
+<% if @listing.section == "Replacement Coils" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Ohm Level: <%= @listing.ohm_level %>
+Warning Section: <%= @listing.warning_section %><br><br>
+Note: <%= @listing.note %>
+<% end %>
+
+
+<% if @listing.section == "Batteries" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Specs: <%=@listing.coil_specs %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Safety Notes: <%= @listing.safety_notes %><br><br>
+Notes: <%= @listing.note %><br><br>
+
+<% end %>
+
+
+<% if @listing.section == "Chargers" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Safety Notes: <%= @listing.safety_notes %><br><br>
+Notes: <%= @listing.note %><br><br>
+<% end %>
+
+
+<% if @listing.section == "Essential Tools for Rebulidables" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Dimensions: <%= @listing.dimensions %><br><br>
+Features: <%= @listing.features %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+Notes: <%= @listing.note %><br><br>
+<% end %>
+
+<% if @listing.section == "Cases and Mod Pouches" %>
+Name:<%=@listing.name %><br><br>
+Description: <%=@listing.description %><br><br>
+Price: <%=@listing.price %><br><br>
+Features: <%= @listing.features %><br><br>
+Warning Section: <%= @listing.warning_section %><br><br>
+<% end %>
+
+
+<input type="hidden" id="listingID" value="<%= @listing.id %>">
 
 
 

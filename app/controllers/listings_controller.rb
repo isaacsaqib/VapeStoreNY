@@ -32,6 +32,24 @@ class ListingsController < ApplicationController
 
 	def show
 		@listing = Listing.find(params[:id])
+		if params[:id]
+			session[:carts] ||= {}
+		@listing = Listing.find(params[:id])
+		@count_cart = session[:carts].count + 2
+			session[:carts][@count_cart] = [@listing.name,@listing.price,params[:product_id],@count_cart]
+		
+		end	
+
+		if params[:remove]
+			Listing.delete(params[:remove])
+		end
+
+	  # Amount in cents
+	  	
+	  	@amount = @listing.price
+
+	  	@listing  = Listing.find(params[:id])
+
 	end
 
 	def edit
