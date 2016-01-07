@@ -4,18 +4,30 @@ end
 
 def create
   # Amount in cents
-  @amount = 500
+  @amount = (params[:final_amount].to_f*100).to_i
 
-  customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
+ customer = Stripe::Customer.create(
+    :email => session[:email],
+    :card  => params[:stripeToken]
   )
 
   charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'usd'
+    :description => 'Payment For Item',
+    :currency    => 'usd',
+      :metadata => {
+      
+      'product_name' => session[:product_names],
+      'first_name' => session[:firstname], 
+      'last_name' => session[:lastname],
+      'address' => session[:address],
+      'city' => session[:city], 
+      'state' => session[:state],
+      'zipcode' => session[:zip],
+      'country' => session[:country],
+      'email' => session[:email]
+    }
   )
 
 rescue Stripe::CardError => e

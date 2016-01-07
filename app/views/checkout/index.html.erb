@@ -51,7 +51,11 @@ end
  	<%end %>
 
 <%
-if session[:shipping] == 'Free Shipping'
+if session[:shipping] == 'Domestic'
+	@shipping_charges = 15
+end
+
+if session[:shipping] == 'Pick Up'
 	@shipping_charges = 0
 end
 if session[:shipping] == 'International Shipping'
