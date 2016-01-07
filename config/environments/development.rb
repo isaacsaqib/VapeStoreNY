@@ -1,11 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-    Rails.configuration.stripe = {
-  :publishable_key => ENV['PUBLISHABLE_KEY'],
-  :secret_key      => ENV['SECRET_KEY']
-}
 
-Stripe.api_key = Rails.configuration.stripe[:secret_key]
+# LIVE
+
+# ENV['PUBLISHABLE_KEY']='pk_live_waR8kX8ZX6s8CfAqsmaz4M0h'
+# ENV['SECRET_KEY']='sk_live_ntZo89e16tNWszafv6yHP3iq'
+
+# TEST
+
+ENV['PUBLISHABLE_KEY']='pk_test_NXjssNSeUkuTtNgc8VWdM10T'
+ENV['SECRET_KEY']='sk_test_C6PLZXjsEKlF932IXz9BhGwF'
+
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

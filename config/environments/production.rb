@@ -2,10 +2,18 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
 
-    Rails.configuration.stripe = {
-  :publishable_key => ENV['PUBLISHABLE_KEY'],
-  :secret_key      => ENV['SECRET_KEY']
-}
+
+# LIVE
+
+# ENV['PUBLISHABLE_KEY']='pk_live_waR8kX8ZX6s8CfAqsmaz4M0h'
+# ENV['SECRET_KEY']='sk_live_ntZo89e16tNWszafv6yHP3iq'
+
+# TEST
+
+ENV['PUBLISHABLE_KEY']='pk_test_NXjssNSeUkuTtNgc8VWdM10T'
+ENV['SECRET_KEY']='sk_test_C6PLZXjsEKlF932IXz9BhGwF'
+
+
 
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
   # Code is not reloaded between requests.

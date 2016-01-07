@@ -1,0 +1,119 @@
+<title>Checkout | MXMNY</title>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<body style="background-image:none;" >
+<h1 class="h1-headers">REVIEW ORDER</h1>
+
+
+<table>
+<%
+if session[:carts] && session[:carts].count > 0 %>
+
+	<tr><th>Name</th><th>Price</th></tr>
+
+<% @total = 0
+@product_names = ''
+@count_products =  ''
+@shipping_charges = 0
+	session[:carts].each do |cart|
+		cart.each do |product|
+			if product[2]!=nil
+			@total = @total+product[1].to_i
+			@product_names = @product_names+", "+product[0]
+			if product[3]!=nil
+				@product_names = @product_names+", "+product[3].to_s
+				end
+session[:product_names] = @product_names;
+			%>
+	
+	<tr><td><%= product[0] %>(<%= product[3] %>)</td><td><%= product[1] %></td><td> <a href="/shipping">Edit Details</a></td></tr>
+			<%
+end
+end
+end 
+%>
+<% if session[:firstname] %>
+
+<tr><td>First Name</td><td><%=session[:firstname]%></td><td></td></tr>
+<tr><td>Last Name</td><td><%=session[:lastname]%></td><td></td><td></td></tr>
+<tr><td>Email</td><td><%=session[:email]%></td><td></td><td></td></tr>
+<tr><td>Address</td><td><%=session[:address]%></td><td></td><td></td></tr>
+<tr><td>City</td><td><%=session[:city]%></td><td></td><td></td></tr>
+<tr><td>State</td><td><%=session[:state]%></td><td></td><td></td></tr>
+<tr><td>Zip</td><td><%=session[:zip]%></td><td></td><td></td></tr>
+<tr><td>Country</td><td><%=session[:country]%></td><td></td><td></td></tr>
+<tr><td>Shipping</td><td><%=session[:shipping]%></td><td></td><td></td></tr>
+	<% if session[:state]=='NY' %>
+	<tr><td>Tax</td><td>8.75%</td><td></td><td></td></tr>
+	<% else %>
+	<tr><td>Tax</td><td>None</td><td></td><td></td></tr>
+
+ 	<%end %>
+
+<%
+if session[:shipping] == 'Free Shipping'
+	@shipping_charges = 0
+end
+if session[:shipping] == 'International Shipping'
+	@shipping_charges = 6
+end
+
+@total = @total+@shipping_charges
+@stripe_amount = @total*100;
+
+
+if session[:tax]!='null'
+	@temp = @total*session[:tax]
+	@total = @total+@temp
+@stripe_amount = (@total*100).to_i;
+
+# / @stripe_amount = @stripe_amount.to_s.gsub('.', '') /
+	
+end
+
+session[:total] = sprintf("%.2f", @total)
+end
+ %>
+ 
+	<tr><td>Total = $<%=session[:total]%></td><td>
+	<%= form_tag charges_path do %>
+ 
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Thanks For Your Purchase"
+          data-amount="<%=@stripe_amount%>"></script>
+          <input type="hidden" name="final_amount" value="<%=session[:total] %>"  />
+          <% end %>
+
+</td><td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="n00747874@students.ncc.edu">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="<%=@product_names%>">
+<input type="hidden" name="amount" id="paypal_amount" value="<%=session[:total]%>">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="return" value="http://127.0.0.1:3000/charges">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" name="cbt" value="Return to The Store">
+    <input type="hidden" name="cancel_return" value="http://127.0.0.1:3000/checkout">
+
+    <!-- PayPal Checkotu -->
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_checkout_pp_142x27.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+</td></tr>
+
+<%
+else %>
+	<tr><td>No product to purchase</td></tr>
+<%
+end
+ %>
+</table>
+
+</body>

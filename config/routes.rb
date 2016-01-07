@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :listings
   resources :charges
   resources :carts
+  resources :shipping
+  resources :checkout
 
 
   # Example of regular route:
