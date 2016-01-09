@@ -15,7 +15,7 @@ ENV['SECRET_KEY']='sk_test_C6PLZXjsEKlF932IXz9BhGwF'
 
 
 
-Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
