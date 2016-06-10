@@ -28,11 +28,14 @@
 				Description:<%= listing.description %><br><br>
 				Size:<%= listing.size %><br><br>
 				Nicotine:<%= listing.nicotine_level %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -53,11 +56,13 @@
 				Product Recommendations: <%= listing.product_recommendations %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
 				Youtube Video: <%= listing.youtube_video_link %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -75,11 +80,13 @@
 				Product Includes: <%= listing.product_includes %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
 				Youtube Video: <%= listing.youtube_video_link %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -97,11 +104,13 @@
 				Product Includes: <%= listing.product_includes %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
 				Youtube Video: <%= listing.youtube_video_link %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -118,11 +127,13 @@
 				Features: <%= listing.features %><br><br>
 				Product Includes: <%= listing.product_includes %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -136,11 +147,13 @@
 				<%= link_to listing.name, listing_path(listing) %><br><br>
 				Price:<%= listing.price %><br><br>
 				Gauge:<%= listing.gauges %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -155,11 +168,13 @@
 				Price:<%= listing.price %><br><br>
 				Description:<%= listing.description %><br><br>
 				Features: <%= listing.features %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -175,11 +190,13 @@
 				<%= link_to listing.name, listing_path(listing) %><br><br>
 				Price:<%= listing.price %><br><br>
 				Features: <%= listing.features %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -199,11 +216,13 @@
 				Warning Section: <%= listing.warning_section %><br><br>
 				Note: <%= listing.note %><br><br>
 
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
-				
-				<% end %>
+
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -222,11 +241,13 @@
 				Warning Section: <%= listing.warning_section %><br><br>
 				Safety Notes: <%= listing.safety_notes %><br><br>
 				Notes: <%= listing.note %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -245,11 +266,13 @@
 				Notes: <%= listing.note %><br><br>
 				Safety Note: <%= listing.safety_notes %><br><br>
 
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
-				
-				<% end %>
+
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -267,11 +290,13 @@
 				Features: <%= listing.features %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
 				Notes: <%= listing.note %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -287,11 +312,13 @@
 				Description:<%= listing.description %><br><br>
 				Features: <%= listing.features %><br><br>
 				Warning Section: <%= listing.warning_section %><br><br>
-				<%= link_to "Delete", listing, :method => :delete,
-                                      data: { confirm: "You sure?" } %><br><br>
-				<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
 				
-				<% end %>
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>

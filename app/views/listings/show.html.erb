@@ -5,24 +5,17 @@ Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Size:<%=@listing.size %><br><br>
 Nicotine Level: <%=@listing.nicotine_level %><br><br>
-<form method="get">
-				<input type="hidden" name="product_id" value="<%=@listing.id%>">
-				<a style="text-decoration:none;" href="<%=listing_path(@listing)%>"></a>
-		
-				 <br/>
-				 
-				<br>
-				<input id="add-to-cart-btn" type="submit" value="Add to bag">
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
+<%end%>
 
-				<br>
-				<br>
-								<div class="line-separator"></div>
-
-
-	</form>	
-
-	<a href="/carts"> Cart</a>
-<% end %>
 
 <% if @listing.section == "Devices" %>
 Name:<%=@listing.name %><br><br>
@@ -144,7 +137,7 @@ Warning Section: <%= @listing.warning_section %><br><br>
 <% end %>
 
 
-<input type="hidden" id="listingID" value="<%= @listing.id %>">
+
 
 
 

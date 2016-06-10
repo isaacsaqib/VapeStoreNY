@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+		skip_before_filter  :verify_authenticity_token
+
 	def index
 		@listings = Listing.all
 		@listings_ejuice = Listing.where(:section => "E-Juice")
@@ -18,46 +20,63 @@ class ListingsController < ApplicationController
 
 	def new
 		@listing = Listing.new
+
 	end
+
+
 
 	def create
-		@listings = Listing.create(listing_params)
-			if @listings.save
-				redirect_to "/"
-			else
-				render :new
+		@listing = Listing.new(listing_params)
 
-			end
+		respond_to do |format|
+			if @listing.save
+				if params[:images]
+					params[:images].each {|image|
+						@listing.pictures.create(image: image)
+					}
+
+				end
+
+			format.html { redirect_to @listing, notice: 'listing was successfully created.' }
+	      	format.json { render json: @listing, status: :created, location: @listing }
+	    	else
+	      	format.html { render action: "new" }
+	      	format.json { render json: @listing.errors, status: :unprocessable_entity }
+	    	end
+  		end
 	end
 
+	
+
 	def show
-		@listing = Listing.find(params[:id])
 		if params[:id]
-			session[:carts] ||= {}
+			session[:cart] ||= {}
 		@listing = Listing.find(params[:id])
-		@count_cart = session[:carts].count + 2
-			session[:carts][@count_cart] = [@listing.name,@listing.price,params[:product_id],@count_cart]
+		@count_cart = session[:cart].count + 2
+			# session[:cart][@count_cart] = [@listing.name, @listing.price, params[:product_id], params[:size], @count_cart, @listing.pictures.first.image.url]
+
+
 		
 		end	
 
-		if params[:remove]
-			Listing.delete(params[:remove])
-		end
 
 	  # Amount in cents
 	  	
 	  	@amount = @listing.price
 
 	  	@listing  = Listing.find(params[:id])
+    	@pictures = @listing.pictures
 
+ 
 	end
 
-	def edit
+	def edit 
 		@listing = Listing.find(params[:id])
-
 	end
 
-		 def update
+
+	
+	 def update
     @listing = Listing.find(params[:id])
 
     respond_to do |format|
@@ -77,19 +96,29 @@ class ListingsController < ApplicationController
     end
   end
 
+
 	def destroy
 		@listing = Listing.find(params[:id])
 		@listing.destroy
-		if @listing.destroy
-			redirect_to @listing 
-		else
-			render :edit
-		end
+
 	end
+
+	def add_to_cart
+		session[:cart] ||= {}
+		key = [params[:id], params[:size]].join('-')
+		session[:cart][key] = (session[:cart][key] || 0) + 1
+		redirect_to :cart
+	end
+
+	def remove_from_cart
+		session[:cart].delete(params[:id])
+		redirect_to :cart
+	end
+
 
 	private
 
-	def listing_params
+		def listing_params
 		params.require(:listing).permit(
 		:name,
 		:size,
@@ -110,7 +139,5 @@ class ListingsController < ApplicationController
 		:section)
 	end
 
-
-	
 
 end

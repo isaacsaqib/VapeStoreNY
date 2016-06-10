@@ -32,7 +32,7 @@
 		 <%=f.label :nicotine_level %>
 		 <%=f.text_field :nicotine_level %><br><br>
 		 <%= f.select :section, options_for_select([["E-Juice"]]) %><br><br>
-	 <%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
+	 	<%= file_field_tag "images[]", type: :file, multiple: true %><br><br>
 
 		<%=f.submit %>
 

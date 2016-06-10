@@ -9,6 +9,15 @@ Rails.application.routes.draw do
   resources :carts
   resources :shipping
   resources :checkout
+  resources :admins
+  resources :pictures
+  get  "/admin"  => "session#new" 
+  # login route
+
+  post "/session"      => "session#create"
+  
+  get  "/logout"       => "session#destroy"
+  #logout route
 
 
   # Example of regular route:
