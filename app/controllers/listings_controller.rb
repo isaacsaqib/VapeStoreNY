@@ -16,6 +16,8 @@ class ListingsController < ApplicationController
 		@listings_charger = Listing.where(:section => "Chargers")
 		@listings_essential_rda = Listing.where(:section => "Essential Tools for Rebulidables")
 		@listings_cases_and_mod_pouches = Listing.where(:section => "Cases and Mod Pouches")
+		@listing  = Listing.find(params[:id])
+    	@pictures = @listing.pictures
 	end
 
 	def new

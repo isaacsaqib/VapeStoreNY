@@ -20,6 +20,55 @@ input {
 	text-align: center;
 }
 
+a {
+	text-decoration: none;
+}
+
+.products > tbody > tr > td > ul > li > a > img {
+	width: 30%;
+	display: block;
+	margin: 0 auto;
+}
+.products > tbody > tr > td > ul > li > a {
+	text-align: center;
+	color: black;
+	display: block;
+	font-family: 'Amatic SC';
+	font-size: 30px;
+}
+.products > tbody > tr > td > ul > li > p {
+	font-family: 'Amatic SC';
+	font-size: 30px;
+
+}
+
+
+
+.products {
+	display: block;
+    margin: 0 auto;
+
+}
+
+#listings-nav {
+	overflow: scroll;
+}
+
+#listings-nav li {
+	font-size: 14px;
+}
+
+#listings-nav li > p {
+	font-size: 25px;
+	padding: 0px;
+	margin:0px;
+}
+
+#listings-nav li > p:hover {
+	cursor: pointer;
+	color: black;
+}
+
 #pictures-list {
 	text-align: center;
 	margin-left: 185px;
@@ -28,6 +77,7 @@ input {
 #pictures-list li {
 	display: inline-block;
 }
+
 #pictures-list img {
 	/*width:40%;*/
 	height: 400px;
@@ -44,10 +94,11 @@ input {
 #nav {
 	background-color: #994C00;
 	width: 13%;
-	height: 1000px;
+	height: 100%;
 	position:fixed;
 	margin-top: 0px;
 	list-style: none;
+	overflow: scroll;
 
 
 	/*border-right: 1px solid green;*/
@@ -56,16 +107,17 @@ input {
 
 #nav li {
 	font-family: 'Amatic SC';
-	font-size: 40px;
 	padding-top:20px;
 	color: white;
 }
 
-#nav li > p {
+#nav li > h1 {
 	margin: 0px;
+	font-size: 40px;
+
 }
 
-#nav li > p:hover {
+#nav li > h1:hover {
 	cursor: pointer;
 	color: black;
 }

@@ -27,6 +27,15 @@ Product Includes: <%= @listing.product_includes %><br><br>
 Product Recommendations: <%= @listing.product_recommendations %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Youtube Video: <%= @listing.youtube_video_link %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -39,6 +48,15 @@ Product Includes: <%= @listing.product_includes %><br><br>
 Product Recommendations: <%= @listing.product_recommendations %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Youtube Video: <%= @listing.youtube_video_link %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 <% if @listing.section == "Rebulidables/RDA's" %>
@@ -49,6 +67,15 @@ Features: <%= @listing.features %><br><br>
 Product Includes: <%= @listing.product_includes %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Youtube Video: <%= @listing.youtube_video_link %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -59,6 +86,15 @@ Price: <%=@listing.price %><br><br>
 Features: <%= @listing.features %><br><br>
 Product Includes: <%= @listing.product_includes %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 <% if @listing.section == "Wire" %>
@@ -66,6 +102,15 @@ Name:<%=@listing.name %><br><br>
 Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Gauge: <%=@listing.gauges %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -74,6 +119,15 @@ Name:<%=@listing.name %><br><br>
 Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Features: <%= @listing.features %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -82,6 +136,15 @@ Name:<%=@listing.name %><br><br>
 Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Features: <%= @listing.features %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -92,6 +155,15 @@ Price: <%=@listing.price %><br><br>
 Ohm Level: <%= @listing.ohm_level %>
 Warning Section: <%= @listing.warning_section %><br><br>
 Note: <%= @listing.note %>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -103,6 +175,15 @@ Specs: <%=@listing.coil_specs %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Safety Notes: <%= @listing.safety_notes %><br><br>
 Notes: <%= @listing.note %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 
 <% end %>
 
@@ -115,6 +196,15 @@ Features: <%= @listing.features %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Safety Notes: <%= @listing.safety_notes %><br><br>
 Notes: <%= @listing.note %><br><br>
+	<% @pictures.each do |pic| %>
+      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+      <%= pic.description %>
+	      <% if logged_in? %>
+	      	<%= link_to "Edit picture", picture_path(pic) %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete,
+	                                      data: { confirm: "You sure?" } %>
+	      <% end %>
+	<% end %> 
 <% end %>
 
 
@@ -126,6 +216,15 @@ Dimensions: <%= @listing.dimensions %><br><br>
 Features: <%= @listing.features %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
 Notes: <%= @listing.note %><br><br>
+	<% @pictures.each do |pic| %>
+	      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+	      <%= pic.description %>
+		      <% if logged_in? %>
+		      	<%= link_to "Edit picture", picture_path(pic) %>
+		     	<%= link_to "Delete picture", @picture, :method => :delete,
+		                                      data: { confirm: "You sure?" } %>
+		      <% end %>
+	<% end %> 
 <% end %>
 
 <% if @listing.section == "Cases and Mod Pouches" %>
@@ -134,6 +233,15 @@ Description: <%=@listing.description %><br><br>
 Price: <%=@listing.price %><br><br>
 Features: <%= @listing.features %><br><br>
 Warning Section: <%= @listing.warning_section %><br><br>
+	<% @pictures.each do |pic| %>
+	      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+	      <%= pic.description %>
+		      <% if logged_in? %>
+		      	<%= link_to "Edit picture", picture_path(pic) %>
+		     	<%= link_to "Delete picture", @picture, :method => :delete,
+		                                      data: { confirm: "You sure?" } %>
+		      <% end %>
+	<% end %> 
 <% end %>
 
 

@@ -1,8 +1,15 @@
 $(document).ready(function(){
 	$("#all-table").hide();
+	$(".products").hide();
+	$("#listings-nav").hide();
 
 
+	$("#nav > li:nth-child(1) > h1").on("click", function(){
+		$(".hide").fadeOut();
+		$(".products").fadeIn();
+		$("#listings-nav").slideDown();
 
+	})
 	// Hiding Tables and Forms
 
 	function HideTableAndForm(name) {
