@@ -98,6 +98,8 @@ $(document).ready(function(){
 	ShowNewListingForm('cases_and_mod_pouch');
 	ShowListingTable('13', 'cases_and_mod_pouch');
 
+	$(".elevatezoom").elevateZoom();
+
 
 
 });

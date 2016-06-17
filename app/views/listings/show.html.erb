@@ -1,247 +1,335 @@
 
 <% if @listing.section == "E-Juice" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Size:<%=@listing.size %><br><br>
-Nicotine Level: <%=@listing.nicotine_level %><br><br>
-	<% @pictures.each do |pic| %>
-      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
-      <%= pic.description %>
-	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
-	      <% end %>
-	<% end %> 
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
+		<% @pictures.each do |pic| %>
+			<li>
+	      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+	     </li>
+	      <%= pic.description %>
+
+		      <% if logged_in? %>
+		      	<%= link_to "Edit picture", picture_path(pic) %>
+		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+		      <% end %>
+
+		<% end %> 
+	
+		
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Size:<br><%=@listing.size %></p></li><br>
+			<li><p>Nicotine Level: <br><%=@listing.nicotine_level %></p></li><br>
+		</ul>
+
+	</ul>
+
 <%end%>
 
 
 <% if @listing.section == "Devices" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Dimensions: <%= @listing.dimensions %><br><br>
-Features: <%= @listing.features %><br><br>
-Product Includes: <%= @listing.product_includes %><br><br>
-Product Recommendations: <%= @listing.product_recommendations %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Youtube Video: <%= @listing.youtube_video_link %><br><br>
-	<% @pictures.each do |pic| %>
-      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
-      <%= pic.description %>
-	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
-	      <% end %>
-	<% end %> 
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
+		<% @pictures.each do |pic| %>
+			<li>
+		      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+		    </li>
+	     	<%= pic.description %>
+
+
+		      <% if logged_in? %>
+		      	<%= link_to "Edit picture", picture_path(pic) %>
+		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+		      <% end %>
+		<% end %> 
+	</ul>
+
+	<ul class="details-list">
+		<li><p>Description: <br><%=@listing.description %></p></li><br>
+		<li><p>Price: <br><%=@listing.price %></p></li><br>
+		<li><p>Dimensions: <br><%=@listing.dimensions %></p></li><br>
+		<li><p>Features: <br><%=@listing.features %></p></li><br>
+		<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
+		<li><p>Product Recommendations: <br><%=@listing.product_recommendations %></p></li><br>
+		<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+		<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
+	</ul>
+
 <% end %>
 
 
 <% if @listing.section == "Tanks" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
-Product Includes: <%= @listing.product_includes %><br><br>
-Product Recommendations: <%= @listing.product_recommendations %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Youtube Video: <%= @listing.youtube_video_link %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
+			<li><p>Product Recommendations: <br><%=@listing.product_recommendations %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
+		</ul>
+
+	</ul>
 <% end %>
 
 <% if @listing.section == "Rebulidables/RDA's" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
-Product Includes: <%= @listing.product_includes %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Youtube Video: <%= @listing.youtube_video_link %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Drip Kits" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
-Product Includes: <%= @listing.product_includes %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 <% if @listing.section == "Wire" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Gauge: <%=@listing.gauges %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Gauge: <br><%=@listing.gauges %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Wicks" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Replacement Parts" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Replacement Coils" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Ohm Level: <%= @listing.ohm_level %>
-Warning Section: <%= @listing.warning_section %><br><br>
-Note: <%= @listing.note %>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Ohm Level: <br><%=@listing.ohm_level %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Note: <br><%=@listing.note %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Batteries" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Specs: <%=@listing.coil_specs %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Safety Notes: <%= @listing.safety_notes %><br><br>
-Notes: <%= @listing.note %><br><br>
+	<ul class="listings-show-pictures">
+		<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Specs: <br><%=@listing.coil_specs %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Safety Notes: <br><%=@listing.safety_notes %></p></li><br>
+			<li><p>Notes: <br><%=@listing.note %></p></li><br>
+		</ul>
+	</ul>
 
 <% end %>
 
 
 <% if @listing.section == "Chargers" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Safety Notes: <%= @listing.safety_notes %><br><br>
-Notes: <%= @listing.note %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
       <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+     </li>
       <%= pic.description %>
 	      <% if logged_in? %>
 	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete,
-	                                      data: { confirm: "You sure?" } %>
+	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 	      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Safety Notes: <br><%=@listing.safety_notes %></p></li><br>
+			<li><p>Notes: <br><%=@listing.note %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 
 <% if @listing.section == "Essential Tools for Rebulidables" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Dimensions: <%= @listing.dimensions %><br><br>
-Features: <%= @listing.features %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-Notes: <%= @listing.note %><br><br>
+	<ul class="listings-show-pictures">
+	<h1><%=@listing.name %></h1>
 	<% @pictures.each do |pic| %>
+		<li>
 	      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+	     </li>
 	      <%= pic.description %>
 		      <% if logged_in? %>
 		      	<%= link_to "Edit picture", picture_path(pic) %>
-		     	<%= link_to "Delete picture", @picture, :method => :delete,
-		                                      data: { confirm: "You sure?" } %>
+		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
 		      <% end %>
 	<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Dimensions: <br><%=@listing.dimensions %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Notes: <br><%=@listing.note %></p></li><br>
+		</ul>
+	</ul>
 <% end %>
 
 <% if @listing.section == "Cases and Mod Pouches" %>
-Name:<%=@listing.name %><br><br>
-Description: <%=@listing.description %><br><br>
-Price: <%=@listing.price %><br><br>
-Features: <%= @listing.features %><br><br>
-Warning Section: <%= @listing.warning_section %><br><br>
-	<% @pictures.each do |pic| %>
-	      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
-	      <%= pic.description %>
-		      <% if logged_in? %>
-		      	<%= link_to "Edit picture", picture_path(pic) %>
-		     	<%= link_to "Delete picture", @picture, :method => :delete,
-		                                      data: { confirm: "You sure?" } %>
-		      <% end %>
-	<% end %> 
+	<ul class="listings-show-pictures">
+		<h1><%=@listing.name %></h1>
+		<% @pictures.each do |pic| %>
+			<li>
+		      <a href="/pictures/<%=pic.id%>"><img class="elevatezoom" src='<%= pic.image.url %>' data-zoom-image='<%= pic.image.url %>'></a>
+		     </li>
+		      <%= pic.description %>
+			      <% if logged_in? %>
+			      	<%= link_to "Edit picture", picture_path(pic) %>
+			     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+			      <% end %>
+		<% end %> 
+
+		<ul class="details-list">
+			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+		</ul>
+
+	</ul>
 <% end %>
 
 

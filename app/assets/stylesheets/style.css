@@ -14,6 +14,8 @@ h1 {
 
 p {
 	text-align: center;
+	font-family: 'Amatic SC';
+
 }
 
 input {
@@ -24,8 +26,52 @@ a {
 	text-decoration: none;
 }
 
-.products > tbody > tr > td > ul > li > a > img {
+h1 {
+	font-family: 'Amatic SC';
+}
+
+.picture-edit {
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+}
+
+.details-list li > p {
+	font-size: 40px;
+
+
+}
+
+.listings-show-pictures {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.listings-show-pictures h1 {
+	font-size: 70px;
+}
+
+.listings-show-pictures li {
+	display: inline-block;
 	width: 30%;
+}
+
+.listings-show-pictures > li > a > img {
+	width: 90%;
+}
+
+.products {
+	margin-left: 300px;
+}
+
+.products li {
+	display: inline-block;
+	width: 40%;
+}
+
+.products > tbody > tr > td > ul > li > a > img {
+	width: 90%;
 	display: block;
 	margin: 0 auto;
 }
@@ -43,12 +89,6 @@ a {
 }
 
 
-
-.products {
-	display: block;
-    margin: 0 auto;
-
-}
 
 #listings-nav {
 	overflow: scroll;

@@ -56,18 +56,26 @@
 		<td class="col">
 			<ul>
 			<% @listings_ejuice.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Size:<%= listing.size %><br><br>
-				Nicotine:<%= listing.nicotine_level %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
-
 			<% end %>
 			</ul>
 		</td>
@@ -84,19 +92,21 @@
 	            		
 	            		<li>
 	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
-	            		</li>
+	            		
 
 	            		<% else %>
 	              			N/A
 	            		<% end %>
 	            	<br>
-						<li><%= link_to listing.name, listing_path(listing) %></li>
-						<li><p>$<%= listing.price %></p></li><br><br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
 
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -109,18 +119,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_tank.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Features: <%= listing.features %><br><br>
-				Product Includes: <%= listing.product_includes %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				Youtube Video: <%= listing.youtube_video_link %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -132,26 +149,28 @@
 	<tr>
 		<td class="col">
 			<ul>
-				<% @listings_rda.each do |listing| %>
-					<% if listing.pictures.first %>
+			<% @listings_rda.each do |listing| %>
+				<% if listing.pictures.first %>
 	            		
 	            		<li>
 	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
-	            		</li>
+	            		
 
 	            		<% else %>
 	              			N/A
 	            		<% end %>
 	            	<br>
-						<li><%= link_to listing.name, listing_path(listing) %></li>
-						<li><p>$<%= listing.price %></p></li><br><br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
 
-						<% if logged_in? %>
-							<%= link_to "Delete", listing, :method => :delete,
-		                                      data: { confirm: "You sure?" } %><br><br>
-							<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
-						<% end %>
-				<% end %>
+
+					<% if logged_in? %>
+					<%= link_to "Delete", listing, :method => :delete,
+	                                      data: { confirm: "You sure?" } %><br><br>
+					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
+					<% end %>
+			<% end %>
 			</ul>
 		</td>
 	</tr>
@@ -162,17 +181,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_drip_kit.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Features: <%= listing.features %><br><br>
-				Product Includes: <%= listing.product_includes %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -185,14 +212,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_wire.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Gauge:<%= listing.gauges %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -205,15 +243,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_wick.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Features: <%= listing.features %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -228,14 +276,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_replacement_part.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Features: <%= listing.features %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -249,19 +308,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_replacement_coil.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Ohm Level: <%= listing.ohm_level %><br><br>
-				Coil Specifications: <%= listing.coil_specs %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				Note: <%= listing.note %><br><br>
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
 
 
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -275,18 +340,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_batteries.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Specs: <%= listing.coil_specs %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				Safety Notes: <%= listing.safety_notes %><br><br>
-				Notes: <%= listing.note %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -299,19 +371,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_charger.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Features: <%= listing.features %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				Notes: <%= listing.note %><br><br>
-				Safety Note: <%= listing.safety_notes %><br><br>
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
 
 
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -324,18 +402,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_essential_rda.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Dimensions: <%= listing.dimensions %><br><br>
-				Features: <%= listing.features %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				Notes: <%= listing.note %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
@@ -348,16 +433,25 @@
 		<td class="col">
 			<ul>
 			<% @listings_cases_and_mod_pouches.each do |listing| %>
-				<%= link_to listing.name, listing_path(listing) %><br><br>
-				Price:<%= listing.price %><br><br>
-				Description:<%= listing.description %><br><br>
-				Features: <%= listing.features %><br><br>
-				Warning Section: <%= listing.warning_section %><br><br>
-				
+				<% if listing.pictures.first %>
+	            		
+	            		<li>
+	            		<%= link_to image_tag(listing.pictures.first.image.url), listing_path(listing) %>	
+	            		
+
+	            		<% else %>
+	              			N/A
+	            		<% end %>
+	            	<br>
+						<%= link_to listing.name, listing_path(listing) %>
+						<p>$<%= listing.price %></p><br><br>
+
+
 					<% if logged_in? %>
 					<%= link_to "Delete", listing, :method => :delete,
 	                                      data: { confirm: "You sure?" } %><br><br>
 					<%= link_to "Edit", edit_listing_path(listing) %><br><br><br>
+						</li>
 					<% end %>
 			<% end %>
 			</ul>
