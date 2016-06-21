@@ -1,0 +1,37 @@
+<title>Cart | MXMNY</title>
+
+
+<body style="background-image:none;">
+
+<%= javascript_include_tag "application.js" %>
+
+
+<table id="cart-table">
+
+	<tr><th></th><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
+<% if !@cart.blank? %> <!-- If the cart is NOT empty -->
+	<% @cart.each do |key| %> <!-- iterate over each key in the cart -->
+		<% 
+			id = key
+			listing = Listing.find_by_id(id) #find the listing by its id
+			next if listing.blank? #proceed if there is no listing present
+		%>
+		<tr>
+			<td><a href="/listings/<%= listing.id %>"><%= image_tag(listing.pictures.first.image.url) %></td>
+			<td><%= listing.name %></td>
+			<td><%= number_to_currency(listing.price) %></td>
+			<td><%= listing.size %></td>
+			<td><%= link_to "X", remove_from_cart_listing_path(key), :method => :delete %></td>
+		</tr>
+	<% end %>
+<% else %>
+	<tr><td>No product in the cart</td></tr>
+<% end %>
+
+</table>
+	<a href="/shipping"><button class="continue-button">Continue</button></a>
+</body>
+
+
+<%= params.inspect %>
+<%= session.inspect %>

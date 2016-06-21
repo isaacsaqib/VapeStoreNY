@@ -17,18 +17,25 @@
 	
 		
 		<ul class="details-list">
+
 			<li><p>Description: <br><%=@listing.description %></p></li><br>
+			<li><p>Description: <br><%=@listing.section %></p></li><br>
 			<li><p>Price: <br><%=@listing.price %></p></li><br>
 			<li><p>Size:<br><%=@listing.size %></p></li><br>
 			<li><p>Nicotine Level: <br><%=@listing.nicotine_level %></p></li><br>
+
 		</ul>
 
 	</ul>
+	<%= params.inspect %>
 
 <%end%>
 
 
+<!-- CONTINUE. SECTIONS NOT BEING RECOGNIZED  -->
+
 <% if @listing.section == "Devices" %>
+
 	<ul class="listings-show-pictures">
 	<h1><%=@listing.name %></h1>
 		<% @pictures.each do |pic| %>
@@ -46,17 +53,24 @@
 	</ul>
 
 	<ul class="details-list">
-		<li><p>Description: <br><%=@listing.description %></p></li><br>
-		<li><p>Price: <br><%=@listing.price %></p></li><br>
-		<li><p>Dimensions: <br><%=@listing.dimensions %></p></li><br>
-		<li><p>Features: <br><%=@listing.features %></p></li><br>
-		<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
-		<li><p>Product Recommendations: <br><%=@listing.product_recommendations %></p></li><br>
-		<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
-		<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
+		<%= form_tag add_to_cart_listing_path(@listing) do %>
+			<li><p>Description: <br><%=@listing.name %></p></li>
+			<li><p>Description: <br><%=@listing.description %></p></li>
+			<li><p>Price: <br><%=@listing.price %></p></li><br>
+			<li><p>Dimensions: <br><%=@listing.dimensions %></p></li><br>
+			<li><p>Features: <br><%=@listing.features %></p></li><br>
+			<li><p>Product Includes: <br><%=@listing.product_includes %></p></li><br>
+			<li><p>Product Recommendations: <br><%=@listing.product_recommendations %></p></li><br>
+			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
+			<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
+		<input id="add-to-cart-btn" type="submit" value="Add to bag">
+		<% end %>
+
 	</ul>
+		<%= params.inspect %>
 
 <% end %>
+
 
 
 <% if @listing.section == "Tanks" %>

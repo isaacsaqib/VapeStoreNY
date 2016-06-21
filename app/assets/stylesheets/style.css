@@ -30,6 +30,15 @@ h1 {
 	font-family: 'Amatic SC';
 }
 
+#cart-table > tbody > tr > td > a > img { /* PRODUCT IMAGE SIZE IN CART */
+	width: 80%;
+
+}
+
+#cart-table > tbody > tr > td {
+	width: 40%;
+}
+
 .picture-edit {
 	width: 40%;
 	margin: 0 auto;
@@ -38,6 +47,7 @@ h1 {
 
 .details-list li > p {
 	font-size: 40px;
+	margin: 0px;
 
 
 }

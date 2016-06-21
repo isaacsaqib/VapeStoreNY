@@ -31,7 +31,7 @@ if session[:shipping] == 'Domestic'
 	@domestic = 'checked'
 end
 
-if session[:shipping] == 'Pick Up'
+if session[:shipping] == 'Pick Up In Store'
 	@pick_up = 'checked'
 end
 
@@ -367,10 +367,38 @@ end
 <option value="Zambia">Zambia</option>
 <option value="Zimbabwe">Zimbabwe</option>
 </select></td></tr>
-	<tr id="free_ship"><td><input type="radio" name="shipping" value="Domestic" <%=@domestic%> />US Shipping</td><td>3-6 Days $15</td></tr>	<tr id="in-store-pickup"><td><input type="radio" name="shipping" value="Pick Up" <%=@pick_up%> />In Store Pickup</td><td>Available at Store FREE</td></tr>
-	<tr id="inter_ship"><td><input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" /><input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping </td><td>7-10 Business Days: $6</td></tr>
+
+	<tr id="free_ship">
+
+		<td>
+			<input type="radio" name="shipping" value="Domestic" <%=@domestic%> />US Shipping
+		</td>
+
+		<td>3-6 Days $15</td>
+
+	</tr>	
+
+	<tr id="in-store-pickup">
+
+		<td>
+			<input type="radio" name="shipping" value="Pick Up In Store" <%=@pick_up%> />In Store Pickup
+		</td>
+			
+		<td>Available at Store FREE</td>
+
+	</tr>
+
+	<tr id="inter_ship">
+		<td>
+			<input type="hidden" id="total" name="total" value="<%= session[:final_total]%>" />
+			<input type="radio" name="shipping" value="International Shipping" <%=@premium_shipping%> />International Shipping 
+		</td>
+
+		<td>7-10 Business Days: $6</td>
+	</tr>
 	
 </table>
+
 <p style="font-family: 'Raleway', sans-serif; text-align:center;">Please fill out all fields completely and accurately before proceeding</p>
 
 <input id="checkout-btn" type="submit" value="Checkout" />

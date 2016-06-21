@@ -5,7 +5,6 @@ if params[:firstname]
 	session[:firstname] = params[:firstname]
  	session[:lastname] = params[:lastname]
  	session[:email] = params[:email]
-
  	session[:address] = params[:address]
  	session[:city] = params[:city]
  	session[:state] = params[:select_state]

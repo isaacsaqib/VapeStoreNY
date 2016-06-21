@@ -1,11 +1,6 @@
 class CheckoutController < ApplicationController
 	
 	def index
-    if params[:remove]
-    session[:carts].delete(params[:remove])
+    		@cart = session[:cart]
     end
-
-	end
-
-
 end

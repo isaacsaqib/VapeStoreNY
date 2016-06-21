@@ -3,14 +3,20 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-  resources :listings
+  resources :listings do
+    member do
+      post :add_to_cart
+      delete :remove_from_cart
+    end
+  end
   resources :charges
-  resources :carts
+  resource :cart
   resources :shipping
   resources :checkout
   resources :admins
   resources :pictures
+ 
+  root 'welcome#index'
   get  "/admin"  => "session#new" 
   # login route
 
