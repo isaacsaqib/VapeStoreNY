@@ -9,8 +9,8 @@
 	      <%= pic.description %>
 
 		      <% if logged_in? %>
-		      	<%= link_to "Edit picture", picture_path(pic) %>
-		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+		      <br>
+		      	<%= link_to "Edit Caption", picture_path(pic) %>
 		      <% end %>
 
 		<% end %> 
@@ -46,9 +46,10 @@
 
 
 		      <% if logged_in? %>
-		      	<%= link_to "Edit picture", picture_path(pic) %>
-		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+		      <br>
+		      	<%= link_to "Edit Caption", picture_path(pic) %><br><br>
 		      <% end %>
+
 		<% end %> 
 	</ul>
 
@@ -63,7 +64,8 @@
 			<li><p>Product Recommendations: <br><%=@listing.product_recommendations %></p></li><br>
 			<li><p>Warning Section: <br><%=@listing.warning_section %></p></li><br>
 			<li><p>Youtube Video: <br><%=@listing.youtube_video_link %></p></li><br>
-		<input id="add-to-cart-btn" type="submit" value="Add to bag">
+
+		<input id="add-to-cart-btn" type="submit" value="Add To Cart">
 		<% end %>
 
 	</ul>
@@ -82,8 +84,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -109,8 +115,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -135,8 +145,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -159,8 +173,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -182,8 +200,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -205,8 +227,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -228,8 +254,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -253,8 +283,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -280,8 +314,12 @@
      </li>
       <%= pic.description %>
 	      <% if logged_in? %>
-	      	<%= link_to "Edit picture", picture_path(pic) %>
-	     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+	      <br>
+	      	<%= link_to "Edit Caption", picture_path(pic) %>
+	      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+	      	<br>
+	      	<br>
 	      <% end %>
 	<% end %> 
 
@@ -306,8 +344,12 @@
 	     </li>
 	      <%= pic.description %>
 		      <% if logged_in? %>
-		      	<%= link_to "Edit picture", picture_path(pic) %>
-		     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+		      <br>
+		      	<%= link_to "Edit Caption", picture_path(pic) %>
+		      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+		      	<br>
+		      	<br>
 		      <% end %>
 	<% end %> 
 
@@ -331,8 +373,12 @@
 		     </li>
 		      <%= pic.description %>
 			      <% if logged_in? %>
-			      	<%= link_to "Edit picture", picture_path(pic) %>
-			     	<%= link_to "Delete picture", @picture, :method => :delete, data: { confirm: "You sure?" } %>
+			      <br>
+			      	<%= link_to "Edit Caption", picture_path(pic) %>
+			      	<%= link_to "Edit Listing Details", listing_path(@listing) %>
+
+			      	<br>
+			      	<br>
 			      <% end %>
 		<% end %> 
 

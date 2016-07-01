@@ -8,7 +8,7 @@
 
 <table id="cart-table">
 
-	<tr><th></th><th>ITEM</th><th>PRICE</th><th>SIZE</th><th>REMOVE</th></tr>
+	<tr><th>ITEM</th><th>NAME</th><th>PRICE</th><th>REMOVE</th></tr>
 <% if !@cart.blank? %> <!-- If the cart is NOT empty -->
 	<% @cart.each do |key| %> <!-- iterate over each key in the cart -->
 		<% 
@@ -33,5 +33,3 @@
 </body>
 
 
-<%= params.inspect %>
-<%= session.inspect %>
