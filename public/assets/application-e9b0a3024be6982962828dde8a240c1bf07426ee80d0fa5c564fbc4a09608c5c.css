@@ -1,0 +1,263 @@
+body {
+	margin:0px;
+	background-color: #E0E0E0;
+	/*margin-left: 185px;*/
+}
+
+ul {
+	padding: 0px;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-family: 'Amatic SC';
+
+}
+
+input {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: 'Amatic SC';
+}
+
+#cart-table > tbody > tr > td > a > img { /* PRODUCT IMAGE SIZE IN CART */
+	width: 80%;
+
+}
+
+#cart-table > tbody > tr > td {
+	width: 40%;
+}
+
+.picture-edit {
+	width: 40%;
+	margin: 0 auto;
+	display: block;
+}
+
+.details-list li > p {
+	font-size: 40px;
+	margin: 0px;
+
+
+}
+
+.listings-show-pictures {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.listings-show-pictures h1 {
+	font-size: 70px;
+}
+
+.listings-show-pictures li {
+	display: inline-block;
+	width: 30%;
+}
+
+.listings-show-pictures > li > a > img {
+	width: 90%;
+}
+
+.products {
+	margin-left: 300px;
+}
+
+.products li {
+	display: inline-block;
+	width: 40%;
+}
+
+.products > tbody > tr > td > ul > li > a > img {
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+}
+.products > tbody > tr > td > ul > li > a {
+	text-align: center;
+	color: black;
+	display: block;
+	font-family: 'Amatic SC';
+	font-size: 30px;
+}
+.products > tbody > tr > td > ul > li > p {
+	font-family: 'Amatic SC';
+	font-size: 30px;
+
+}
+
+
+
+#listings-nav {
+	overflow: scroll;
+}
+
+#listings-nav li {
+	font-size: 14px;
+}
+
+#listings-nav li > p {
+	font-size: 25px;
+	padding: 0px;
+	margin:0px;
+}
+
+#listings-nav li > p:hover {
+	cursor: pointer;
+	color: black;
+}
+
+#pictures-list {
+	text-align: center;
+	margin-left: 185px;
+}
+
+#pictures-list li {
+	display: inline-block;
+}
+
+#pictures-list img {
+	/*width:40%;*/
+	height: 400px;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+
+
+#pictures-list > li:nth-child(1) > img {
+
+}
+
+#nav {
+	background-color: #994C00;
+	width: 13%;
+	height: 100%;
+	position:fixed;
+	margin-top: 0px;
+	list-style: none;
+	overflow: scroll;
+
+
+	/*border-right: 1px solid green;*/
+
+}
+
+#nav li {
+	font-family: 'Amatic SC';
+	padding-top:20px;
+	color: white;
+}
+
+#nav li > h1 {
+	margin: 0px;
+	font-size: 40px;
+
+}
+
+#nav li > h1:hover {
+	cursor: pointer;
+	color: black;
+}
+
+
+
+
+#logo {
+	width: 25%;
+	padding: 30px;
+	display: block;
+	margin-left:585px;
+}
+
+
+
+.new-div {
+	background-color:white;
+	width:100%;
+	text-align:center;
+	height:400px;
+	padding-top:50px;
+
+
+}
+
+.h1-new-form:hover {
+	cursor: pointer;
+	font-family: "Verdana";
+}
+
+#welcome-div {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#welcome-pic {
+	padding-top: 100px;
+}
+
+.mc-field-group label {
+	font-family: 'Verdana';
+
+	padding-right: 30px;
+	padding-left:30px;
+
+	/*width: 90%;*/
+
+
+}
+
+.mc-field-group input {
+	height: 20px;
+	width: 30%;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.mc-field-group {
+	text-align: center;
+
+}
+
+.clear {
+	text-align: center;
+	padding-top: 10px;
+
+}
+
+#mc-embedded-subscribe {
+	background-color: black;
+	color: white;
+	height: 50px;
+	width: 70%;
+
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
